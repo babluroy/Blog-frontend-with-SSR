@@ -1,0 +1,19 @@
+.blogContainer{
+    z-index: 2;
+    margin-top: 50px;
+}
+
+.imageContainer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.imageContainer img{
+    height: 350px;
+    border-radius: 5px;
+}
+
+.desc{
+    line-height: 35px;
+}
