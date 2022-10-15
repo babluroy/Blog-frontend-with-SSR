@@ -20,12 +20,19 @@ export default function Navbar() {
   const [showBasic, setShowBasic] = useState(false);
 
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
+    checkIsAuthenticated();
     const userInfo = localStorage.getItem("jwt");
     const role = JSON.parse(userInfo)
     setIsAdmin(role?.role)
   }, [])
+
+  const checkIsAuthenticated = () => {
+    const auth = isAuthenticated();
+    setIsAuth(auth)
+  }
 
 
   return (
@@ -65,13 +72,13 @@ export default function Navbar() {
             ) : ""}
           </MDBNavbarNav>
 
-          {isAuthenticated() ? (
+          {isAuth ? (
           <div className='d-flex input-group w-auto'>
             <MDBBtn color='danger' onClick={signout}>Logout</MDBBtn>
           </div>
           ) :""}
 
-          {!isAuthenticated() ? (
+          {!isAuth ? (
           <div className='d-flex input-group w-auto'>
             <Link href={url_constants.signup}>
               <MDBBtn color='success'>Signup</MDBBtn>
