@@ -10,6 +10,7 @@ import {
 import ApiService from '../../api';
 import { toast } from 'react-toastify';
 import Loader from "../Loader"
+import { Editor } from '@tinymce/tinymce-react';
 
 const initialState = {
   title: "",
@@ -109,9 +110,33 @@ export default function CreateBlogForm() {
 
       <textarea name="shortDesc" row="4" className="textarea mb-4" placeholder="Short Description (Max 80 Characters)" maxLength="80" onChange={handleChange}></textarea>
     
-      <textarea name="desc" row="4" className="textarea mb-4" placeholder="Write Blog Content" onChange={handleChange}></textarea>
+      {/* <textarea name="desc" row="4" className="textarea mb-4" placeholder="Write Blog Content" onChange={handleChange}></textarea> */}
 
-      <MDBRow className='mb-5'>
+      <Editor
+        apiKey="ok6okzhtki279c18py4xfd683qcevj1t04mqu0b4crje61kk"
+        textareaName="Body"
+        init={{
+          height: 500,
+          menubar: false,
+          plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table paste code help wordcount",
+          ],
+          toolbar:
+            "undo redo | formatselect | " +
+            "bold italic backcolor | alignleft aligncenter " +
+            "alignright alignjustify | bullist numlist outdent indent | " +
+            "removeformat | help",
+          content_style:
+            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+        }}
+        onEditorChange={(newText) =>
+          setBlog({ ...blog, desc: newText })
+        }
+      />
+
+      <MDBRow className='mb-5 mt-4'>
       <MDBCol md="2">
         <MDBCheckbox  
           id='fea'
@@ -135,7 +160,7 @@ export default function CreateBlogForm() {
       </MDBCol>
       </MDBRow>
 
-      <MDBBtn className='mb-4' type='submit' block>
+      <MDBBtn className='mb-5' type='submit' block>
         Upload Blog
       </MDBBtn>
     </form>
