@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import {url_constants} from "../../utils/routerLink_constants"
 
 export default function SideNav({children}) {
   return (
@@ -9,16 +11,16 @@ export default function SideNav({children}) {
                 <div className="list-group list-group-flush mx-3 mt-4">
                   <ul id="collapseExample1" className="collapse show list-group list-group-flush">
                     <li className="list-group-item py-1">
-                      <a href="#" className="text-reset">Create Blog</a>
+                      <Link href={url_constants.admin} className="text-reset">Create Blog</Link>
                     </li>
                     <li className="list-group-item py-1">
-                      <a href="#" className="text-reset">Edit / Delete Blog</a>
+                      <Link href={url_constants.edit_blog} className="text-reset">Edit / Delete Blog</Link>
                     </li>
                     <li className="list-group-item py-1">
-                      <a href="#" className="text-reset">Add Categories</a>
+                      <Link href="#" className="text-reset">Add Categories</Link>
                     </li>
                     <li className="list-group-item py-1">
-                      <a href="#" className="text-reset">Edit / Delete Categories</a>
+                      <Link href="#" className="text-reset">Edit / Delete Categories</Link>
                     </li>
                   </ul>
                 </div>

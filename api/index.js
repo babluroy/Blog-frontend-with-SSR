@@ -18,7 +18,7 @@ const blogApi = axios.create({
     },
 });
 
-const blogApiCreateBlog = axios.create({
+const blogApiForm = axios.create({
     baseURL: BLOG_URL,
     timeout: 20000,
     headers: {
@@ -72,7 +72,7 @@ class ApiService {
     }
 
     CREATE_BLOG(id, blog){
-        return blogApiCreateBlog.post(API_CONSTANTS.CREATE_BLOG + `/${id}`, blog)
+        return blogApiForm.post(API_CONSTANTS.CREATE_BLOG + `/${id}`, blog)
     }
 
 }

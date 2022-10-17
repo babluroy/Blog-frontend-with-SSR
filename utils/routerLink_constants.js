@@ -4,5 +4,6 @@ export const url_constants = {
     blog: "/app/blog/",
     allBlogs: "/app/all-blogs?limit=9&pageNumber=1",
     allBlogs_without_params: "/app/all-blogs",
-    admin: "/admin/home"
+    admin: "/admin/home",
+    edit_blog: "/admin/edit-blog"
 }

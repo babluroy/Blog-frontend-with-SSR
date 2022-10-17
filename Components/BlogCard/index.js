@@ -5,13 +5,14 @@ import {
   MDBCardTitle,
   MDBCardText,
   MDBCardImage,
-  MDBRipple
+  MDBRipple,
+  MDBBtn
 } from 'mdb-react-ui-kit';
 import styles from "./index.module.css"
 import Link from 'next/link';
 import {url_constants} from "../../utils/routerLink_constants"
 
-export default function BlogCard({image, title, shortDesc, id}) {
+export default function BlogCard({image, title, shortDesc, id, isAdmin = false, edit, trash}) {
 
   return (
     <>
@@ -28,6 +29,14 @@ export default function BlogCard({image, title, shortDesc, id}) {
         <MDBCardText>
           {shortDesc}
         </MDBCardText>
+        {isAdmin ? (
+          <>
+        <MDBBtn
+         onClick={edit}
+        >Edit</MDBBtn>
+        <MDBBtn className='mx-2' color="danger" onClick={trash}>Delete</MDBBtn>
+           </>
+        ) :""}
       </MDBCardBody>
     </MDBCard>
     </Link>
