@@ -4,12 +4,27 @@ import { api_constants } from "../utils/api_constants";
 const API_CONSTANTS = api_constants;
 const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_API_URL;
 
+if (typeof window !== 'undefined') {
+    var token = JSON.parse(localStorage.getItem('jwt')).token;
+}
+
 const blogApi = axios.create({
     baseURL: BLOG_URL,
     timeout: 20000,
     headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
+        Authorization: token,
+    },
+});
+
+const blogApiCreateBlog = axios.create({
+    baseURL: BLOG_URL,
+    timeout: 20000,
+    headers: {
+        "Content-Type": "multipart/form-data",
+        Accept: "application/json",
+        Authorization: token,
     },
 });
 
@@ -50,6 +65,14 @@ class ApiService {
 
     GET_BLOG(id){
         return blogApi.get(API_CONSTANTS.BLOG + id)
+    }
+
+    GET_ALL_CATEGORIES(){
+        return blogApi.get(API_CONSTANTS.CATEGORIES)
+    }
+
+    CREATE_BLOG(id, blog){
+        return blogApiCreateBlog.post(API_CONSTANTS.CREATE_BLOG + `/${id}`, blog)
     }
 
 }

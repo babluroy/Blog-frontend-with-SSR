@@ -66,9 +66,11 @@ export default function Navbar() {
               </Link>
             </MDBNavbarItem>
             {isAuthenticated() && isAdmin ? (
+            <Link href={url_constants.admin}>
             <MDBNavbarItem>
               <MDBNavbarLink href='#'>Admin Dashboard</MDBNavbarLink>
             </MDBNavbarItem>
+            </Link>
             ) : ""}
           </MDBNavbarNav>
 

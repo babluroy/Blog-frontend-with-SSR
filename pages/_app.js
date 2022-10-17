@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         pauseOnHover
       />
       <Component {...pageProps} />
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }
