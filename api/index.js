@@ -5,7 +5,7 @@ const API_CONSTANTS = api_constants;
 const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_API_URL;
 
 if (typeof window !== 'undefined') {
-    var token = JSON.parse(localStorage.getItem('jwt')).token;
+    var token = JSON.parse(localStorage.getItem('jwt'))?.token;
 }
 
 const blogApi = axios.create({
@@ -73,6 +73,10 @@ class ApiService {
 
     CREATE_BLOG(id, blog){
         return blogApiForm.post(API_CONSTANTS.CREATE_BLOG + `/${id}`, blog)
+    }
+
+    DELETE_BLOG(blogId, userId){
+        return blogApi.delete(API_CONSTANTS.DELETE_BLOG + `/` + blogId + "/" + userId)
     }
 
 }

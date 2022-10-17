@@ -75,7 +75,7 @@ export default function CreateBlogForm() {
   return (
     <>
     <Loader loader={loading}/>
-    <h2 className='mb-4'>Create Blog</h2>
+     <h3 className="mb-4">Create Blog</h3>
     <form onSubmit={handleSubmit}>
       <MDBRow className='mb-4'>
         <MDBCol>

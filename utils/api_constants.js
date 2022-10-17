@@ -6,5 +6,6 @@ export const api_constants = {
     ALL_BLOGS: "/all-blogs",
     BLOG: "/blog/",
     CATEGORIES:"/categories",
-    CREATE_BLOG: "/create-blog"
+    CREATE_BLOG: "/create-blog",
+    DELETE_BLOG: "/delete-blog",
 }
