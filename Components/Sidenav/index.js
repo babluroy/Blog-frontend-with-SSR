@@ -17,7 +17,7 @@ export default function SideNav({children}) {
                       <Link href={url_constants.edit_blog + "?limit=9&pageNumber=1"} className="text-reset">Edit / Delete Blog</Link>
                     </li>
                     <li className="list-group-item py-1">
-                      <Link href="#" className="text-reset">Add Categories</Link>
+                      <Link href={url_constants.create_category} className="text-reset">Add Categories</Link>
                     </li>
                     <li className="list-group-item py-1">
                       <Link href="#" className="text-reset">Edit / Delete Categories</Link>

@@ -78,6 +78,14 @@ class ApiService {
     DELETE_BLOG(blogId, userId){
         return blogApi.delete(API_CONSTANTS.DELETE_BLOG + `/` + blogId + "/" + userId)
     }
+    
+    UPDATE_BLOG(blogId, userId, blog){
+        return blogApiForm.put(API_CONSTANTS.UPDATE_BLOG + `/` + blogId + "/" + userId, blog)
+    }
+
+    CREATE_CATGORY(id, category){
+        return blogApi.post(API_CONSTANTS.CREATE_CATEGORY + "/" + id, category)
+    }
 
 }
 
