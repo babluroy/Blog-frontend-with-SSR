@@ -4,6 +4,7 @@ import Router from 'next/router';
 export const authenticate = (data) => {
     if(typeof window !== "undefined") {
         Cookies.set('loggedin', true);
+        Cookies.set('role', data.role);
         return localStorage.setItem("jwt", JSON.stringify(data));
     }
 }

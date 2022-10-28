@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { 
     MDBInput, 
     MDBCard,
@@ -12,6 +12,7 @@ import Loader from '../Loader';
 import { authenticate } from '../../helpers/auth';
 import Router from 'next/router';
 import { toast } from 'react-toastify';
+import {UserContext} from "../../Context/UserContext"
 
 export default function Login() {
 
@@ -19,6 +20,8 @@ export default function Login() {
     email: "",
     password: ""
   };
+
+  const context = useContext(UserContext);
 
   const [credentials, setCredentials] = useState(initialState)
   const [loader, setLoader] = useState(false)
@@ -39,12 +42,14 @@ export default function Login() {
       setLoader(false);
       toast.success(`Welcome ${res.data.name}`)
       authenticate(res.data);
+      context.setUser(res.data)
       redirect();
     }).catch((err) => {
       toast.error(err.response.data.error);
       setLoader(false);
     })
   }
+  
   
   return (
     <>

@@ -20,7 +20,7 @@ export default function SideNav({children}) {
                       <Link href={url_constants.create_category} className="text-reset">Add Categories</Link>
                     </li>
                     <li className="list-group-item py-1">
-                      <Link href="#" className="text-reset">Edit / Delete Categories</Link>
+                      <Link href={url_constants.ediit_category} className="text-reset">Categories</Link>
                     </li>
                   </ul>
                 </div>

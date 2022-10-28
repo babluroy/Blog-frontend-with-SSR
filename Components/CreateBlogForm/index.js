@@ -128,12 +128,12 @@ export default function CreateBlogForm() {
     <form onSubmit={isEdit ? updateBlog : handleSubmit}>
       <MDBRow className='mb-4'>
         <MDBCol>
-          <MDBInput label='Title' name="title" onChange={handleChange} value={blog.title}/>
+          <MDBInput label='Title' name="title" onChange={handleChange} value={blog.title} contrast/>
         </MDBCol>
 
         <MDBCol>
             <select className="browser-default custom-select dropdown" name="category" disabled={loading} onChange={handleChange}>
-              <option defaultValue>Select Category</option>
+              <option className="option-placeholder" defaultValue>Select Category</option>
               {categories.map((value, i)=> (
               <Fragment key={i}>
                 <option value={value._id} selected={blog.category.name == value.name}>{value.name}</option>
@@ -154,6 +154,7 @@ export default function CreateBlogForm() {
             onChange={(e)=>{
               handleChange(e, 1)
             }}
+            contrast
           />
          </MDBCol>
       </MDBRow>
@@ -182,7 +183,6 @@ export default function CreateBlogForm() {
         onEditorChange={(newText) =>
           setBlog({ ...blog, desc: newText })
         }
-        initialValue={blog.desc}
       />
 
       <MDBRow className='mb-5 mt-4'>
@@ -196,6 +196,7 @@ export default function CreateBlogForm() {
           onChange={()=>{
             handleChangeCheckbox("featured", !blog.featured)
           }}
+          contrast
         />
       </MDBCol>
       <MDBCol md="2">
@@ -207,6 +208,7 @@ export default function CreateBlogForm() {
           onChange={()=>{
             handleChangeCheckbox("highlighted", !blog.highlighted)
           }}
+          contrast
         />
       </MDBCol>
       </MDBRow>

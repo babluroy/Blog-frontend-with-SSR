@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 export default function middleware(req){
     let verify = req.cookies.get("loggedin");
+    let role = req.cookies.get("role");
     let url = req.url;
 
     const isOnPublicRoutes = () => {
@@ -21,6 +22,10 @@ export default function middleware(req){
     }
 
     if(url === "http://localhost:3000/"){
+        return NextResponse.redirect("http://localhost:3000/app/home")
+    }
+
+    if(role == 0 && url.includes("/admin")){
         return NextResponse.redirect("http://localhost:3000/app/home")
     }
 }

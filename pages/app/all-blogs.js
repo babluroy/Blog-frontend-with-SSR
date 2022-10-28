@@ -25,7 +25,7 @@ export default function AllBlogs({allBlogs}) {
 
   return (
     <>
-   <MDBContainer className='pt-4 mb-5'>
+   <MDBContainer className='pt-5 mb-5'>
      <MDBRow className="mt-5">
         {allBlogs.map((data, index) => (
         <MDBCol md='4' lg='4' sm='12' key={index}>

@@ -48,7 +48,6 @@ export default function AddCategoryForm() {
   }
 
  // TODO: EDIT CATEGORY
-
   useEffect(() => {
     // getAllCategories();
     const id = JSON.parse(localStorage.getItem("jwt"))?._id;
@@ -125,7 +124,7 @@ export default function AddCategoryForm() {
     <form onSubmit={isEdit ? updateBlog : handleSubmit}>
       <MDBRow className='mb-4'>
         <MDBCol md={4}>
-          <MDBInput label='Name' name="name" value={category.name} onChange={handleChange} />
+          <MDBInput label='Name' name="name" value={category.name} onChange={handleChange} contrast/>
         </MDBCol>
       </MDBRow>
       {isEdit ? (

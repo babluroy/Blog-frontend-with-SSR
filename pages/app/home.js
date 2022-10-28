@@ -33,12 +33,11 @@ export default function Home({caraouselBlogs,featuredBlogs,allBlogs}) {
         </MDBCol>
         ))}
     </MDBRow>
-    <div className="d-grid gap-2 col-6 mx-auto mb-5 mt-4">
+    <div className="d-grid gap-2 col-6 mx-auto mb-10 mt-4">
       <Link href={url_constants.allBlogs}>
         <MDBBtn color='secondary' outline rounded>View All</MDBBtn>
       </Link>
     </div>
-    
     </MDBContainer>
     </>
   )

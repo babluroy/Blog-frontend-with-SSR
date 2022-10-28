@@ -70,7 +70,7 @@ export default function EditBlog() {
     <>
     <Loader loader={loading}/>
      <AdminBaseLayout>
-      <MDBContainer>
+      <MDBContainer className="mt-5">
         <h3>Edit / Delete blog</h3>
         
       <MDBRow className="mt-5">

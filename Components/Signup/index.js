@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import {UserContext} from "../../Context/UserContext"
 import { 
     MDBInput, 
     MDBCard,
@@ -22,6 +23,8 @@ export default function Signup() {
      password: "",
      role: 0,
   };
+
+  const context = useContext(UserContext);
 
   const [credentials, setCredentials] = useState(initialState)
   const [loader, setLoader] = useState(false)
@@ -48,6 +51,7 @@ export default function Signup() {
       setLoader(false);
       toast.success(`Welcome ${res.data.name}`)
       authenticate(res.data);
+      context.setUser(res.data)
       redirect();
     }).catch((err) => {
       toast.error(err.response.data.error);

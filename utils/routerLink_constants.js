@@ -6,5 +6,6 @@ export const url_constants = {
     allBlogs_without_params: "/app/all-blogs",
     admin: "/admin/home",
     edit_blog: "/admin/edit-blog",
-    create_category: "/admin/add-categories"
+    create_category: "/admin/add-categories",
+    ediit_category: "/admin/edit-categories"
 }

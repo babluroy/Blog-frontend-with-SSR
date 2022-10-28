@@ -6,7 +6,7 @@ export default function home() {
   return (
     <>
       <AdminBaseLayout>
-       <CreateBlogForm/>
+        <CreateBlogForm/>
       </AdminBaseLayout>
     </>
   )
