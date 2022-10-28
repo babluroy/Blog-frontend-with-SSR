@@ -34,12 +34,12 @@ export default function AllBlogs({allBlogs}) {
         ))}
     </MDBRow>
     <div className="text-center mt-4">
-       <MDBBtn outline color='secondary' size='lg' className='m-2' onClick={()=>{
+       <MDBBtn color='secondary' size='lg' className='m-2' onClick={()=>{
         changePage(0)
        }}>
           Previous Page
        </MDBBtn>
-        <MDBBtn outline color='secondary' size='lg' className='m-2' onClick={()=>{
+        <MDBBtn color='secondary' size='lg' className='m-2' onClick={()=>{
         changePage(1)
        }}>
           Next Page
