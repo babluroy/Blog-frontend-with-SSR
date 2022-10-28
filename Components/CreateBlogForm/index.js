@@ -183,6 +183,7 @@ export default function CreateBlogForm() {
         onEditorChange={(newText) =>
           setBlog({ ...blog, desc: newText })
         }
+        initialValue={ isEdit? blog.desc : ""}
       />
 
       <MDBRow className='mb-5 mt-4'>
