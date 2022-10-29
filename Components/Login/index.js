@@ -17,8 +17,8 @@ import {UserContext} from "../../Context/UserContext"
 export default function Login() {
 
   const initialState = {
-    email: "",
-    password: ""
+    email: "test@test.com",
+    password: "59192580"
   };
 
   const context = useContext(UserContext);
@@ -60,10 +60,10 @@ export default function Login() {
        <h2>Login</h2>
       </div>
         <MDBCardTitle>E-mail</MDBCardTitle>
-        <MDBInput name="email" type='email' autoComplete="off" onChange={handleChangeInput}/>
+        <MDBInput name="email" type='email' autoComplete="off" value={credentials.email} onChange={handleChangeInput}/>
         <div className='mt-4'>
           <MDBCardTitle>Password</MDBCardTitle>
-          <MDBInput name="password" type='password' autoComplete="off" onChange={handleChangeInput}/>
+          <MDBInput name="password" type='password' value={credentials.password} autoComplete="off" onChange={handleChangeInput}/>
         </div>
         <div className="mt-4">
           <MDBBtn onClick={handleLogin}>Login</MDBBtn>
