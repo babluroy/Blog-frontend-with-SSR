@@ -55,7 +55,8 @@ export default function Navbar() {
 
 
   return (
-    <MDBNavbar expand='lg' dark bgColor='dark' className={styles.navbarCustom}>
+    <>
+    <MDBNavbar expand='lg' dark bgColor='light' className={styles.navbarCustom}>
       <MDBContainer fluid>
         <Link href="/">
           <MDBNavbarBrand className={styles.brandText}>Intesol Blogs</MDBNavbarBrand>
@@ -116,5 +117,6 @@ export default function Navbar() {
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>
+    </>
   );
 }

@@ -1,30 +1,40 @@
-import React, {useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn} from 'mdb-react-ui-kit';
 import BlogCard from '../../Components/BlogCard';
 import { getAllBlogs } from '../../lib/blogs';
 import Router, { useRouter } from 'next/router';
 import { url_constants } from '../../utils/routerLink_constants';
+import EmptyBlogs from '../../Components/EmptyBlogs';
 
 export default function AllBlogs({allBlogs}) {
 
  const params = useRouter();
 
+ const [isEmpty, setIsEmpty] = useState(false);
+
  const changePage = (isNext) => {
-
-    if(!isNext == 1 && params.query.pageNumber == 1) return
-
+  if(!isNext == 1 && params.query.pageNumber == 1) return
     if(isNext){
         var pageNumber = parseInt(params.query.pageNumber) + 1
     } else {
         var pageNumber = parseInt(params.query.pageNumber) - 1
     }
-
    Router.push(url_constants.allBlogs_without_params + `?limit=${params.query.limit}` + `&pageNumber=${pageNumber}`)
-
 }
+
+
+useEffect(() => {
+  if(allBlogs.length == 0){
+    setIsEmpty(true)
+  } else {
+    setIsEmpty(false)
+  }
+},[allBlogs])
+
 
   return (
     <>
+  {!isEmpty ? (
    <MDBContainer className='pt-5 mb-5'>
      <MDBRow className="mt-5">
         {allBlogs.map((data, index) => (
@@ -46,6 +56,9 @@ export default function AllBlogs({allBlogs}) {
        </MDBBtn>
     </div>
     </MDBContainer>
+   ) : 
+     <EmptyBlogs/>
+   }
     </>
   )
 }

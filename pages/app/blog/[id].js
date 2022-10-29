@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { MDBContainer} from 'mdb-react-ui-kit';
 import styles from "./index.module.css"
 import {getBlogById} from "../../../lib/blogs"
@@ -10,6 +10,10 @@ export default function Blog({blog}) {
    const formatDate = (date) => {
         return moment(date).format("DD/MM/YYYY");
    }
+
+   useEffect(() => {
+    console.log(blog)
+   },[blog])
     
   return (
     <div className={styles.blogContainer}>
@@ -24,7 +28,11 @@ export default function Blog({blog}) {
               />
             </div>
             <div className="mt-5">
-                <b>Date: {formatDate(blog.createdAt)}</b>
+                <div className="mb-3">
+                  <b>Date: {formatDate(blog.createdAt)}</b>
+                   <span className="mx-4">|</span>
+                  <b>Category: {blog.category.name}</b>
+                </div>
               <div className={styles.desc} dangerouslySetInnerHTML={{__html: `${blog.desc}`}}></div>
             </div>
         </MDBContainer>

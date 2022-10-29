@@ -87,6 +87,10 @@ class ApiService {
         return blogApi.post(API_CONSTANTS.CREATE_CATEGORY + "/" + id, category)
     }
 
+    GET_BLOGS_BY_CATEGORIES(id, limit, pageNumber){
+        return blogApi.get(API_CONSTANTS.GET_BLOGS_BY_CATEGORIES + "/" + id, + "?" + `?limit=${limit}` + `&pageNumber=${pageNumber}`)
+    }
+
 }
 
 export default ApiService;

@@ -29,6 +29,11 @@ input, select, textarea{
   color: #fff;
 }
 
+select option {
+  background-color: #000;
+  color: #fff;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #ccc;
   opacity: 1; /* Firefox */
@@ -37,6 +42,11 @@ input, select, textarea{
 .form-check-label{
   color: #fff;
 }
+
+.fa-bars:before {
+  content: "\f0c9";
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -48,12 +58,15 @@ input, select, textarea{
   }
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
 
 .center-content{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 90vh;
 }
 
 .slider-img{

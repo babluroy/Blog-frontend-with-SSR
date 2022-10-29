@@ -10,4 +10,5 @@ export const api_constants = {
     DELETE_BLOG: "/delete-blog",
     UPDATE_BLOG: "/update-blog",
     CREATE_CATEGORY: "/create-category",
+    GET_BLOGS_BY_CATEGORIES: "/get-blogs-by-categories",
 }
