@@ -55,7 +55,7 @@ export default function Home({caraouselBlogs,featuredBlogs,allBlogs,categories})
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const caraouselBlogs = await getHighlightedBlogs();
   const featuredBlogs = await getFeaturedBlogs();
   const allBlogs = await getAllBlogs(50);
