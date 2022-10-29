@@ -72,7 +72,7 @@ export const getServerSideProps = async (context) => {
     const blogs = await getBlogsByCategories(id,limit,pageNumber);
     return {
         props: {
-            blogs
+            blogs: blogs || null,
         },
     }
   }

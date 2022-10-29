@@ -70,7 +70,7 @@ export const getServerSideProps = async ({query}) => {
     const allBlogs = await getAllBlogs(limit,pageNumber);
     return {
       props: {
-        allBlogs
+        allBlogs: allBlogs || null,
       }
     }
   }

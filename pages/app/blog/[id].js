@@ -46,7 +46,7 @@ export const getServerSideProps = async (context) => {
     const blog = await getBlogById(id);
     return {
         props: {
-            blog
+            blog: blog || null,
         },
     }
   }

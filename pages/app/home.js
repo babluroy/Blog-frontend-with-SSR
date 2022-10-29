@@ -62,10 +62,10 @@ export const getStaticProps = async () => {
   const categories = await getCategories();
   return {
     props: {
-      caraouselBlogs,
-      featuredBlogs,
-      allBlogs,
-      categories,
+      caraouselBlogs: caraouselBlogs || null,
+      featuredBlogs: featuredBlogs || null,
+      allBlogs: allBlogs || null,
+      categories: categories || null ,
     }
   }
 }
