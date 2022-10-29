@@ -8,17 +8,17 @@
 }
 
 .navbarCustom{
-    position: fixed !important;
-    top: 0 !important;
-    width: 100% !important;
-    z-index: 2 !important;
-    box-shadow: 0 0 5px 0 !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0 0 5px 0;
     /* background: rgba(255, 255, 255, 0.2) !important; */
     background: rgba(0, 0, 0, 0.2) !important;
-    backdrop-filter: blur(5.7px) !important;
-    -webkit-backdrop-filter: blur(5.7px) !important;
-    background: rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(8.7px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    backdrop-filter: blur(5.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
