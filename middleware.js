@@ -4,9 +4,12 @@ export default function middleware(req){
     let verify = req.cookies.get("loggedin");
     let role = req.cookies.get("role");
     let url = req.url;
+    const next_url = req.nextUrl.clone()
+    const local_url = "http://localhost:3000/"
+    const production_url = "https://blog-frontend-with-ssr.vercel.app/"
 
     const isOnPublicRoutes = () => {
-        if(url === "http://localhost:3000/public/login" || url === "http://localhost:3000/public/signup") {
+        if(url.includes("/login") || url.includes("/signup")) {
             return true;
         } else {
             return false;
@@ -14,18 +17,22 @@ export default function middleware(req){
     }
     
     if(!verify && url.includes("/app")){
-        return NextResponse.redirect("http://localhost:3000/public/login")
+        next_url.pathname = "/public/login"
+        return NextResponse.redirect(next_url)
     }
 
     if(verify && isOnPublicRoutes()){
-        return NextResponse.redirect("http://localhost:3000/app/home")
+        next_url.pathname = "/app/home"
+        return NextResponse.redirect(next_url)
     }
 
-    if(url === "http://localhost:3000/"){
-        return NextResponse.redirect("http://localhost:3000/app/home")
+    if(url == production_url || url == local_url){
+        next_url.pathname = "/app/home"
+        return NextResponse.redirect(next_url)
     }
 
     if(role == 0 && url.includes("/admin")){
-        return NextResponse.redirect("http://localhost:3000/app/home")
+        next_url.pathname = "/app/home"
+        return NextResponse.redirect(next_url)
     }
 }
