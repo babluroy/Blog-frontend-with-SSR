@@ -8,7 +8,7 @@ export default function Loader({loader}) {
         {loader ? (
             <div className={style.container}>
               <div className={style.containerBody}>
-                <MDBSpinner grow style={{ width: '3rem', height: '3rem' }}/>
+                <MDBSpinner color='light' grow style={{ width: '3rem', height: '3rem' }}/>
                </div>
             </div>
         ): ""}

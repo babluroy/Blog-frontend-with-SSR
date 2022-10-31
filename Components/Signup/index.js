@@ -5,7 +5,9 @@ import {
     MDBCard,
     MDBCardBody,
     MDBCardTitle,
-    MDBBtn } 
+    MDBBtn,
+    MDBContainer
+  } 
 from 'mdb-react-ui-kit';
 import {card} from "./index.module.css"
 import ApiService from '../../api';

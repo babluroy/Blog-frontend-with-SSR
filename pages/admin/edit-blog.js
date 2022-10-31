@@ -70,10 +70,10 @@ export default function EditBlog() {
     <>
     <Loader loader={loading}/>
      <AdminBaseLayout>
-      <MDBContainer className="mt-5">
+      <MDBContainer>
         <h3>Edit / Delete blog</h3>
         
-      <MDBRow className="mt-5">
+      <MDBRow className="mt-3">
         {blogs.map((data, index) => (
         <MDBCol md='4' lg='4' sm='12' key={index}>
           <BlogCard 

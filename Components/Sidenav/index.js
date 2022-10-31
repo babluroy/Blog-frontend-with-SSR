@@ -28,7 +28,7 @@ export default function SideNav({children}) {
             </nav>
           </header>
           <main style={{margintop: "58px"}}>
-            <div className="container" style={{marginTop: "80px"}}>
+            <div className="container" style={{marginTop: "15px"}}>
               {children}
             </div>
           </main>

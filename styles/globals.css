@@ -28,7 +28,10 @@ h3{
 }
 
 input, select, textarea{
-  color: #fff;
+  color: #fff !important;
+}
+input[type="file"]{
+  color: #000 !important;
 }
 
 select option {
