@@ -17,7 +17,7 @@ export default function Blog({blog}) {
     
   return (
     <div className={styles.blogContainer}>
-        <MDBContainer className='pt-5 mb-5'>
+        <MDBContainer className='pt-3 mb-5'>
             <h1 className="text-center">{blog.title}</h1>
             <div className={styles.imageContainer}>
               <Image 
