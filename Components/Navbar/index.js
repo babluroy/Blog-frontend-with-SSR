@@ -83,10 +83,10 @@ export default function Navbar() {
         </MDBNavbarToggler>
 
         <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+          <MDBNavbarNav>
             <MDBNavbarItem onClick={collapseNavbar}>
             <Link href="/">
-              <MDBNavbarLink aria-current='page' href='/' className={url == url_constants.home ? "active" : ""}>
+              <MDBNavbarLink aria-current='page' className={url == url_constants.home ? "active" : ""}>
                 Home
               </MDBNavbarLink>
              </Link>
@@ -109,22 +109,20 @@ export default function Navbar() {
           <div className='d-flex input-group w-auto'>
             <MDBBtn color='danger' onClick={logoutHandler}>Logout</MDBBtn>
           </div>
-          ) :""}
-
-          {!isAuth ? (
+          ) :
           <>
-          <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
-            <Link href={url_constants.signup}>
-              <MDBBtn color='success' className={styles.authButton}>Signup</MDBBtn>
-            </Link>
-          </div>
-          <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
-            <Link href={url_constants.signin}>
-              <MDBBtn color='secondary' className={styles.authButton}>Login</MDBBtn>
-            </Link>
-          </div>
-          </>
-          ) :""}
+            <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
+              <Link href={url_constants.signup}>
+                <MDBBtn color='success' className={styles.authButton}>Signup</MDBBtn>
+              </Link>
+            </div>
+            <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
+              <Link href={url_constants.signin}>
+                <MDBBtn color='secondary' className={styles.authButton}>Login</MDBBtn>
+              </Link>
+            </div>
+            </>
+          }
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>
