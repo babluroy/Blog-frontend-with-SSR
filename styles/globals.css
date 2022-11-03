@@ -15,6 +15,12 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .option-placeholder{
   color: #fff !important;
 }

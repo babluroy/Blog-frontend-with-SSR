@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Router from "next/router";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
       setLoading(true);
     };
     const end = () => {
-      console.log("finished");
       setLoading(false);
     };
     Router.events.on("routeChangeStart", start);

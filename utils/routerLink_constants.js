@@ -4,6 +4,7 @@ export const url_constants = {
 
     signin: "/public/login",
     signup: "/public/signup",
+    home: "/app/home",
     blog: "/app/blog/",
     allBlogs: "/app/all-blogs?limit=9&pageNumber=1",
     allBlogs_without_params: "/app/all-blogs",

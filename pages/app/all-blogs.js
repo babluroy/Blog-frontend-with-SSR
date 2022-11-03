@@ -10,6 +10,7 @@ export default function AllBlogs({allBlogs}) {
 
  const params = useRouter();
 
+ const [pageNum, setPageNum] = useState(1)
  const [isEmpty, setIsEmpty] = useState(false);
 
  const changePage = (isNext) => {
@@ -21,6 +22,10 @@ export default function AllBlogs({allBlogs}) {
     }
    Router.push(url_constants.allBlogs_without_params + `?limit=${params.query.limit}` + `&pageNumber=${pageNumber}`)
 }
+
+useEffect(() => {
+  setPageNum(params.query.pageNumber)
+},[params])
 
 
 useEffect(() => {
@@ -35,7 +40,7 @@ useEffect(() => {
   return (
     <>
   {!isEmpty ? (
-   <MDBContainer className='pt-5 mb-5'>
+   <MDBContainer className='mb-5'>
      <MDBRow className="mt-5">
         {allBlogs.map((data, index) => (
         <MDBCol md='4' lg='4' sm='12' key={index}>
@@ -44,11 +49,13 @@ useEffect(() => {
         ))}
     </MDBRow>
     <div className="text-center mt-4">
-       <MDBBtn color='secondary' size='lg' className='m-2' onClick={()=>{
-        changePage(0)
-       }}>
-          Previous Page
-       </MDBBtn>
+      {pageNum != 1 ? (
+        <MDBBtn color='secondary' size='lg' className='m-2' onClick={()=>{
+          changePage(0)
+        }}>
+            Previous Page
+        </MDBBtn>
+       ) : ""}
         <MDBBtn color='secondary' size='lg' className='m-2' onClick={()=>{
         changePage(1)
        }}>

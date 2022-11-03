@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Intesol Blogs</title>
+        <title>Intesol</title>
         <meta name="description" content="Intesol blogs" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
