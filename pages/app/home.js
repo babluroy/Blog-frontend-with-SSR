@@ -6,11 +6,12 @@ import { MDBContainer, MDBRow, MDBCol, MDBBtn} from 'mdb-react-ui-kit';
 import Link from 'next/link';
 import {url_constants} from "../../utils/routerLink_constants"
 import CategoryCard from '../../Components/CategoryCard';
+import Layout from '../../Components/Layout';
 
 export default function Home({caraouselBlogs,featuredBlogs,allBlogs,categories}) {
 
   return (
-    <>
+    <Layout>
      <CarouselComp caraouselBlogs={caraouselBlogs}/>
      <MDBContainer className="mt-5">
 
@@ -51,7 +52,7 @@ export default function Home({caraouselBlogs,featuredBlogs,allBlogs,categories})
       </Link>
     </div>
     </MDBContainer>
-    </>
+    </Layout>
   )
 }
 

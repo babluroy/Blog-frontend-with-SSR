@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import Loader from '../../Components/Loader';
 import CategoryCard from '../../Components/CategoryCard';
 import {MDBRow, MDBCol, MDBContainer} from "mdb-react-ui-kit"
+import Layout from '../../Components/Layout';
 
 export default function Editcategory() {
 
@@ -29,7 +30,7 @@ export default function Editcategory() {
 
 
   return (
-    <>
+    <Layout>
        <Loader loader={loading}/>
          <AdminBaseLayout>
            <MDBContainer>
@@ -42,6 +43,6 @@ export default function Editcategory() {
             </MDBRow>
             </MDBContainer>
          </AdminBaseLayout>
-    </>
+    </Layout>
   )
 }

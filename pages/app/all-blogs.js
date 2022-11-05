@@ -5,6 +5,7 @@ import { getAllBlogs } from '../../lib/blogs';
 import Router, { useRouter } from 'next/router';
 import { url_constants } from '../../utils/routerLink_constants';
 import EmptyBlogs from '../../Components/EmptyBlogs';
+import Layout from '../../Components/Layout';
 
 export default function AllBlogs({allBlogs}) {
 
@@ -38,7 +39,7 @@ useEffect(() => {
 
 
   return (
-    <>
+    <Layout>
   {!isEmpty ? (
    <MDBContainer className='mb-5'>
      <MDBRow className="mt-5">
@@ -66,7 +67,7 @@ useEffect(() => {
    ) : 
      <EmptyBlogs/>
    }
-    </>
+    </Layout>
   )
 }
 
