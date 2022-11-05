@@ -44,7 +44,6 @@ export default function Navbar() {
   },[context])
 
   const logoutHandler = () => {
-    collapseNavbar();
     context.setUser(null);
     signout();
   }
@@ -67,7 +66,7 @@ export default function Navbar() {
 
   return (
     <>
-    <MDBNavbar expand='lg' dark className={styles.navbarCustom}>
+    <MDBNavbar fixed='top' expand='lg' dark className={styles.navbarCustom}>
       <MDBContainer fluid>
         <Link href="/">
           <MDBNavbarBrand className={styles.brandText}>Intesol</MDBNavbarBrand>
