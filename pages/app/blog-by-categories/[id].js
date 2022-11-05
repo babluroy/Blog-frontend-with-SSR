@@ -35,7 +35,7 @@ export default function BlogsByCategory({blogs}) {
   return (
     <>
     {!isEmpty ? (
-    <MDBContainer className='pt-5 mb-5'>
+    <MDBContainer className='pt-2 pb-5'>
       <MDBRow className="mt-5">
          {blogs.map((data, index) => (
          <MDBCol md='4' lg='4' sm='12' key={index}>
