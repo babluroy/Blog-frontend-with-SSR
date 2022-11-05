@@ -95,6 +95,13 @@ export default function Navbar() {
                 <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>All Blogs</MDBNavbarLink>
               </Link>
               </MDBNavbarItem>
+              {isAdmin ? (
+              <MDBNavbarItem onClick={collapseNavbar}>
+              <Link href={url_constants.admin}>
+                <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>Admin Panel</MDBNavbarLink>
+              </Link>
+              </MDBNavbarItem>
+              ) : ""}
             </MDBNavbarNav>
             
           {isAuth ? (
