@@ -4,7 +4,7 @@ import styles from "./index.module.css"
 import {getBlogById} from "../../../lib/blogs"
 import Image from 'next/image';
 import moment from 'moment/moment';
-import Layout from '../../Components/Layout';
+import Layout from "../../../Components/Layout"
 
 export default function Blog({blog}) {
 
