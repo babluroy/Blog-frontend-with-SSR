@@ -24,7 +24,6 @@ export default function Navbar() {
   const context = useContext(UserContext)
 
   const [url, setUrl] = useState("")
-  const [showBasic, setShowBasic] = useState(false);
   const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
@@ -62,72 +61,12 @@ export default function Navbar() {
   },[params])
 
   const collapseNavbar = () => {
-    setShowBasic(false)
+    setShowNavNoTogglerSecond(false)
   }
 
   return (
     <>
-    {/* <MDBNavbar fixed='top' expand='lg' dark className={styles.navbarCustom}>
-      <MDBContainer fluid>
-        <Link href="/">
-          <MDBNavbarBrand className={styles.brandText}>Intesol</MDBNavbarBrand>
-        </Link>
-
-        <MDBNavbarToggler
-          aria-controls='navbarSupportedContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-          onClick={() => setShowBasic(!showBasic)}
-        >
-          <MDBIcon icon='bars' fas />
-        </MDBNavbarToggler>
-
-        <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav>
-            <MDBNavbarItem onClick={collapseNavbar}>
-            <Link href="/">
-              <MDBNavbarLink aria-current='page' className={url == url_constants.home ? "active" : ""}>
-                Home
-              </MDBNavbarLink>
-             </Link>
-            </MDBNavbarItem>
-            <MDBNavbarItem onClick={collapseNavbar}>
-              <Link href={url_constants.allBlogs}>
-                <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>All Blogs</MDBNavbarLink>
-              </Link>
-            </MDBNavbarItem>
-            {isAuthenticated() && isAdmin ? (
-            <Link href={url_constants.admin}>
-            <MDBNavbarItem onClick={collapseNavbar}>
-              <MDBNavbarLink className={url == url_constants.admin ? "active" : ""}>Admin Dashboard</MDBNavbarLink>
-            </MDBNavbarItem>
-            </Link>
-            ) : ""}
-          </MDBNavbarNav>
-
-          {isAuth ? (
-          <div className='d-flex input-group w-auto'>
-            <MDBBtn color='danger' onClick={logoutHandler}>Logout</MDBBtn>
-          </div>
-          ) :
-          <>
-            <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
-              <Link href={url_constants.signup}>
-                <MDBBtn color='success' className={styles.authButton}>Signup</MDBBtn>
-              </Link>
-            </div>
-            <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
-              <Link href={url_constants.signin}>
-                <MDBBtn color='secondary' className={styles.authButton}>Login</MDBBtn>
-              </Link>
-            </div>
-            </>
-          }
-        </MDBCollapse>
-      </MDBContainer>
-    </MDBNavbar> */}
-
-      <MDBNavbar  fixed='top' expand='lg' dark className={styles.navbarCustom}>
+      {/* <MDBNavbar  fixed='top' expand='lg' dark className={styles.navbarCustom}>
         <MDBContainer fluid>
           <Link href="/">
             <MDBNavbarBrand className={styles.brandText}>Intesol</MDBNavbarBrand>
@@ -142,16 +81,16 @@ export default function Navbar() {
           >
             <MDBIcon icon='bars' fas />
           </MDBNavbarToggler>
-          <MDBCollapse navbar show={showNavNoTogglerSecond}>
+          <MDBCollapse show={showNavNoTogglerSecond} navbar>
             <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-              <MDBNavbarItem>
+              <MDBNavbarItem onClick={collapseNavbar}>
               <Link href="/">
                 <MDBNavbarLink aria-current='page'className={url == url_constants.home ? "active" : ""}>
                   Home
                 </MDBNavbarLink>
               </Link>
               </MDBNavbarItem>
-              <MDBNavbarItem>
+              <MDBNavbarItem onClick={collapseNavbar}>
               <Link href={url_constants.allBlogs}>
                 <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>All Blogs</MDBNavbarLink>
               </Link>
@@ -176,6 +115,40 @@ export default function Navbar() {
             </div>
             </>
           }
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar> */}
+
+<MDBNavbar expand='lg' light bgColor='light'>
+        <MDBContainer fluid>
+          <MDBNavbarBrand href='#'>Navbar</MDBNavbarBrand>
+          <MDBNavbarToggler
+            type='button'
+            data-target='#navbarTogglerDemo02'
+            aria-controls='navbarTogglerDemo02'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+            onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
+          >
+            <MDBIcon icon='bars' fas />
+          </MDBNavbarToggler>
+          <MDBCollapse navbar show={showNavNoTogglerSecond}>
+            <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+              <MDBNavbarItem>
+                <MDBNavbarLink active aria-current='page' href='#'>
+                  Home
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink href='#'>Link</MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
+                  Disabled
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+            </MDBNavbarNav>
+          wd
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
