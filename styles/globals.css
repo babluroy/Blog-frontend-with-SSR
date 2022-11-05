@@ -120,7 +120,7 @@ select option {
   }
   
   /* Sidebar */
-  /* .sidebar {
+  .sidebar {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -157,5 +157,5 @@ select option {
   padding-top: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto; 
-  } */
+  }
    /*End of Sidebar */
