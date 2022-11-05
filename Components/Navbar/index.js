@@ -61,7 +61,7 @@ export default function Navbar() {
   },[params])
 
   const collapseNavbar = () => {
-    setShowNavNoTogglerSecond(false)
+    setShowNavNoTogglerSecond(!showNavNoTogglerSecond)
   }
 
   return (
@@ -77,11 +77,11 @@ export default function Navbar() {
             aria-controls='navbarTogglerDemo02'
             aria-expanded='false'
             aria-label='Toggle navigation'
-            onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
+            onClick={collapseNavbar}
           >
             <MDBIcon icon='bars' fas />
           </MDBNavbarToggler>
-          <MDBCollapse className={showNavNoTogglerSecond ? "show" : ""} navbar>
+          <MDBCollapse show={showNavNoTogglerSecond} navbar>
             <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
               <MDBNavbarItem onClick={collapseNavbar}>
               <Link href="/">
