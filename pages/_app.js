@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Router from "next/router";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import Layout from '../Components/Layout'
 import Footer from '../Components/Footer'
 import '../styles/globals.css'
 import { ToastContainer } from 'react-toastify';
@@ -43,6 +44,7 @@ function MyApp({ Component, pageProps }) {
       <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet" />
     </Head>
       <UserContext.Provider value={{user, setUser}}>
+      <Layout/>
       <ToastContainer
         position="bottom-right"
         autoClose={5000}

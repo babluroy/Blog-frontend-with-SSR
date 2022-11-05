@@ -4,7 +4,6 @@ import styles from "./index.module.css"
 import {getBlogById} from "../../../lib/blogs"
 import Image from 'next/image';
 import moment from 'moment/moment';
-import Layout from "../../../Components/Layout"
 
 export default function Blog({blog}) {
 
@@ -17,7 +16,6 @@ export default function Blog({blog}) {
    },[blog])
     
   return (
-    <Layout>
     <div className={styles.blogContainer}>
         <MDBContainer className='pt-3 mb-5'>
             <h1 className="text-center">{blog.title}</h1>
@@ -39,7 +37,6 @@ export default function Blog({blog}) {
             </div>
         </MDBContainer>
     </div>
-   </Layout>
   )
 }
 

@@ -8,7 +8,6 @@ import BlogCard from '../../Components/BlogCard';
 import ApiService from '../../api';
 import { toast } from 'react-toastify';
 import Loader from '../../Components/Loader';
-import Layout from '../../Components/Layout';
 
 export default function EditBlog() {
 
@@ -68,7 +67,7 @@ export default function EditBlog() {
     }
 
   return (
-    <Layout>
+    <>
     <Loader loader={loading}/>
      <AdminBaseLayout>
       <MDBContainer>
@@ -108,6 +107,6 @@ export default function EditBlog() {
       </div>
       </MDBContainer>
      </AdminBaseLayout>
-    </Layout>
+    </>
   )
 }

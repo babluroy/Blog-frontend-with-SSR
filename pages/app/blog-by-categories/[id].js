@@ -5,7 +5,7 @@ import Router, { useRouter } from 'next/router';
 import { url_constants } from '../../../utils/routerLink_constants';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn} from 'mdb-react-ui-kit';
 import EmptyBlogs from '../../../Components/EmptyBlogs';
-import Layout from '../../../Components/Layout';
+
 
 export default function BlogsByCategory({blogs}) {
 
@@ -33,7 +33,7 @@ export default function BlogsByCategory({blogs}) {
   
 
   return (
-    <Layout>
+    <>
     {!isEmpty ? (
     <MDBContainer className='pt-5 mb-5'>
       <MDBRow className="mt-5">
@@ -59,7 +59,7 @@ export default function BlogsByCategory({blogs}) {
      ) : 
      <EmptyBlogs/>
      }
-     </Layout>
+     </>
   )
 }
 
