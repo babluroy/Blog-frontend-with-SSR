@@ -63,7 +63,6 @@ export default function Navbar() {
     setShowBasic(false)
   }
 
-
   return (
     <>
     <MDBNavbar fixed='top' expand='lg' dark className={styles.navbarCustom}>
@@ -81,7 +80,8 @@ export default function Navbar() {
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
 
-        <MDBCollapse navbar show={showBasic}>
+        {/* <MDBCollapse navbar show={showBasic}> */}
+        <MDBCollapse navbar>
           <MDBNavbarNav>
             <MDBNavbarItem onClick={collapseNavbar}>
             <Link href="/">
