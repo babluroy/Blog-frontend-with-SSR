@@ -60,6 +60,10 @@ export default function Navbar() {
     setUrl(params.pathname)
   },[params])
 
+  useEffect(() => {
+    console.log(showNavNoTogglerSecond)
+  },[showNavNoTogglerSecond])
+
   const collapseNavbar = () => {
     setShowNavNoTogglerSecond(!showNavNoTogglerSecond)
   }
