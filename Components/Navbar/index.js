@@ -60,7 +60,7 @@ export default function Navbar() {
   },[params])
 
   const collapseNavbar = () => {
-    // setShowBasic(false)
+    setShowBasic(false)
   }
 
 
@@ -81,7 +81,7 @@ export default function Navbar() {
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
 
-        <MDBCollapse navbar show={showBasic}>
+        <MDBCollapse navbar>
           <MDBNavbarNav>
             <MDBNavbarItem onClick={collapseNavbar}>
             <Link href="/">
