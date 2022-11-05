@@ -81,7 +81,7 @@ export default function Navbar() {
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
 
-        <MDBCollapse navbar>
+        <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav>
             <MDBNavbarItem onClick={collapseNavbar}>
             <Link href="/">
