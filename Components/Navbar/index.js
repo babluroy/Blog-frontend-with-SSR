@@ -25,16 +25,15 @@ export default function Navbar() {
 
   const [url, setUrl] = useState("")
   const [showBasic, setShowBasic] = useState(false);
+  const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
+  
 
   useEffect(() => {
     const userInfo = localStorage.getItem("jwt");
     const role = JSON.parse(userInfo)
     setIsAdmin(role?.role)
-    if(showBasic){
-      setShowBasic(false);
-    }
   }, [])
 
   useEffect(() => {
@@ -68,7 +67,7 @@ export default function Navbar() {
 
   return (
     <>
-    <MDBNavbar fixed='top' expand='lg' dark className={styles.navbarCustom}>
+    {/* <MDBNavbar fixed='top' expand='lg' dark className={styles.navbarCustom}>
       <MDBContainer fluid>
         <Link href="/">
           <MDBNavbarBrand className={styles.brandText}>Intesol</MDBNavbarBrand>
@@ -126,7 +125,60 @@ export default function Navbar() {
           }
         </MDBCollapse>
       </MDBContainer>
-    </MDBNavbar>
+    </MDBNavbar> */}
+
+      <MDBNavbar  fixed='top' expand='lg' dark className={styles.navbarCustom}>
+        <MDBContainer fluid>
+          <Link href="/">
+            <MDBNavbarBrand className={styles.brandText}>Intesol</MDBNavbarBrand>
+          </Link>
+          <MDBNavbarToggler
+            type='button'
+            data-target='#navbarTogglerDemo02'
+            aria-controls='navbarTogglerDemo02'
+            aria-expanded='false'
+            aria-label='Toggle navigation'
+            onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
+          >
+            <MDBIcon icon='bars' fas />
+          </MDBNavbarToggler>
+          <MDBCollapse navbar show={showNavNoTogglerSecond}>
+            <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+              <MDBNavbarItem>
+              <Link href="/">
+                <MDBNavbarLink aria-current='page'className={url == url_constants.home ? "active" : ""}>
+                  Home
+                </MDBNavbarLink>
+              </Link>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+              <Link href={url_constants.allBlogs}>
+                <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>All Blogs</MDBNavbarLink>
+              </Link>
+              </MDBNavbarItem>
+            </MDBNavbarNav>
+            
+          {isAuth ? (
+          <div className='d-flex input-group w-auto'>
+            <MDBBtn color='danger' onClick={logoutHandler}>Logout</MDBBtn>
+          </div>
+          ) :
+          <>
+            <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
+              <Link href={url_constants.signup}>
+                <MDBBtn color='success' className={styles.authButton}>Signup</MDBBtn>
+              </Link>
+            </div>
+            <div className='d-flex input-group w-auto' onClick={collapseNavbar}>
+              <Link href={url_constants.signin}>
+                <MDBBtn color='secondary' className={styles.authButton}>Login</MDBBtn>
+              </Link>
+            </div>
+            </>
+          }
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar>
     </>
   );
 }

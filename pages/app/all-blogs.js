@@ -40,7 +40,7 @@ useEffect(() => {
   return (
     <>
   {!isEmpty ? (
-   <MDBContainer className='mb-5'>
+   <MDBContainer className='mb-5' style={{marginTop:"100px"}}>
      <MDBRow className="mt-5">
         {allBlogs.map((data, index) => (
         <MDBCol md='4' lg='4' sm='12' key={index}>
