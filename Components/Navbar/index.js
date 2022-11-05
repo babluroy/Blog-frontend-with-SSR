@@ -60,7 +60,7 @@ export default function Navbar() {
   },[params])
 
   const collapseNavbar = () => {
-    setShowBasic(false)
+    // setShowBasic(false)
   }
 
 
