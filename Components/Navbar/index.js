@@ -32,6 +32,9 @@ export default function Navbar() {
     const userInfo = localStorage.getItem("jwt");
     const role = JSON.parse(userInfo)
     setIsAdmin(role?.role)
+    if(showBasic){
+      setShowBasic(false);
+    }
   }, [])
 
   useEffect(() => {
