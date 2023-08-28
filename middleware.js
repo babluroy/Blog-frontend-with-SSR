@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export default function middleware(req){
-    let verify = req.cookies.get("loggedin");
+    let isLoggedIn = req.cookies.get("loggedin");
     let role = req.cookies.get("role");
     let url = req.url;
     const next_url = req.nextUrl.clone()
@@ -9,19 +9,16 @@ export default function middleware(req){
     const production_url = "https://blog-frontend-with-ssr.vercel.app/"
 
     const isOnPublicRoutes = () => {
-        if(url.includes("/login") || url.includes("/signup")) {
-            return true;
-        } else {
-            return false;
-        }
+        if(url.includes("/login") || url.includes("/signup")) return true;
+        return false;
     }
     
-    if(!verify && url.includes("/app")){
+    if(!isLoggedIn && (url.includes("/app") || url.includes("/admin"))){
         next_url.pathname = "/public/login"
         return NextResponse.redirect(next_url)
     }
 
-    if(verify && isOnPublicRoutes()){
+    if(isLoggedIn && isOnPublicRoutes()){
         next_url.pathname = "/app/home"
         return NextResponse.redirect(next_url)
     }

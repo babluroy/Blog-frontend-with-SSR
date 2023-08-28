@@ -10,10 +10,6 @@ export default function Blog({blog}) {
    const formatDate = (date) => {
         return moment(date).format("DD/MM/YYYY");
    }
-
-   useEffect(() => {
-    console.log(blog)
-   },[blog])
     
   return (
     <div className={styles.blogContainer}>
