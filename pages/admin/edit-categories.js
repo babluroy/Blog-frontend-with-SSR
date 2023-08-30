@@ -32,8 +32,9 @@ export default function Editcategory() {
     <>
        <Loader loader={loading}/>
          <AdminBaseLayout>
+         <div className='admin-custom-margin'>
            <MDBContainer>
-           <MDBRow className="mt-5">
+           <MDBRow>
             {categories.map((data, index) => (
                 <MDBCol md='3' lg='3' sm='12' key={index}>
                 <CategoryCard category={data.name}/>
@@ -41,6 +42,7 @@ export default function Editcategory() {
             ))}
             </MDBRow>
             </MDBContainer>
+            </div>
          </AdminBaseLayout>
     </>
   )

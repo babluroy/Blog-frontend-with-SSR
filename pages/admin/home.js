@@ -6,7 +6,9 @@ export default function home() {
   return (
     <>
       <AdminBaseLayout>
-        <CreateBlogForm/>
+        <div className='admin-custom-margin'>
+           <CreateBlogForm/>
+         </div>
       </AdminBaseLayout>
     </>
   )

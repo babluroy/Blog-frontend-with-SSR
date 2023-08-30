@@ -17,7 +17,7 @@ import {UserContext} from "../../Context/UserContext"
 export default function Login() {
 
   const initialState = {
-    email: "test@test.com",
+    email: "admin@admin.com",
     password: "59192580"
   };
 

@@ -5,7 +5,9 @@ import AdminBaseLayout from "../../Components/AdminBaseLayout"
 export default function AddCategories() {
   return (
     <AdminBaseLayout>
+      <div className='admin-custom-margin'>
         <AddCategoryForm/>
+      </div>
     </AdminBaseLayout>
   )
 }

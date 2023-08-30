@@ -159,3 +159,7 @@ select option {
   overflow-y: auto; 
   }
    /*End of Sidebar */
+
+  .admin-custom-margin {
+      margin-top: 6rem;
+  }

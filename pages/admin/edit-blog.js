@@ -70,6 +70,7 @@ export default function EditBlog() {
     <>
     <Loader loader={loading}/>
      <AdminBaseLayout>
+     <div className='admin-custom-margin'>
       <MDBContainer>
         <h3>Edit / Delete blog</h3>
         
@@ -106,6 +107,7 @@ export default function EditBlog() {
        </MDBBtn>
       </div>
       </MDBContainer>
+      </div>
      </AdminBaseLayout>
     </>
   )

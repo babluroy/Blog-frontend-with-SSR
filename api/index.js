@@ -1,5 +1,6 @@
 import axios, {AxiosResponse} from "axios";
 import { api_constants } from "../utils/api_constants";
+import Cookies from "js-cookie";
 
 const API_CONSTANTS = api_constants;
 const BLOG_URL = process.env.NEXT_PUBLIC_BLOG_API_URL;
@@ -35,7 +36,8 @@ blogApi.interceptors.response.use(
     function (error) {
         if(error.response?.status === 401) {
             localStorage.clear();
-            window.location.href = "/login"
+            Cookies.remove('loggedin')
+            window.location.href = "/public/login"
         }
         return Promise.reject(error);
     }

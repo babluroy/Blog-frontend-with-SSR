@@ -60,10 +60,6 @@ export default function Navbar() {
     setUrl(params.pathname)
   },[params])
 
-  useEffect(() => {
-    console.log(showNavNoTogglerSecond)
-  },[showNavNoTogglerSecond])
-
   const collapseNavbar = () => {
     setShowNavNoTogglerSecond(!showNavNoTogglerSecond)
   }
@@ -87,20 +83,20 @@ export default function Navbar() {
           </MDBNavbarToggler>
           <MDBCollapse show={!showNavNoTogglerSecond} navbar>
             <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-              <MDBNavbarItem onClick={collapseNavbar}>
+              <MDBNavbarItem>
               <Link href="/">
                 <MDBNavbarLink aria-current='page'className={url == url_constants.home ? "active" : ""}>
                   Home
                 </MDBNavbarLink>
               </Link>
               </MDBNavbarItem>
-              <MDBNavbarItem onClick={collapseNavbar}>
+              <MDBNavbarItem>
               <Link href={url_constants.allBlogs}>
                 <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>All Blogs</MDBNavbarLink>
               </Link>
               </MDBNavbarItem>
               {isAdmin ? (
-              <MDBNavbarItem onClick={collapseNavbar}>
+              <MDBNavbarItem>
               <Link href={url_constants.admin}>
                 <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>Admin Panel</MDBNavbarLink>
               </Link>
