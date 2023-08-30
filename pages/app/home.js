@@ -1,3 +1,5 @@
+export const fetchCache = 'force-no-store';
+
 import React from 'react'
 import BlogCard from '../../Components/BlogCard'
 import CarouselComp from "../../Components/Carousel"
