@@ -93,19 +93,20 @@ export default function EditBlog() {
         ))}
       </MDBRow>
 
-      <div className="text-center mt-4">
-       <MDBBtn outline color='secondary' size='lg' className='m-2' onClick={()=>{
-        changePage(0)
-       }}>
-          Previous Page
-       </MDBBtn>
-
+      {blogs.length > 0 ? (
+        <div className="text-center mt-4 mb-4">
         <MDBBtn outline color='secondary' size='lg' className='m-2' onClick={()=>{
-          changePage(1)
+          changePage(0)
         }}>
-          Next Page
-       </MDBBtn>
-      </div>
+            Previous Page
+        </MDBBtn>
+          <MDBBtn outline color='secondary' size='lg' className='m-2' onClick={()=>{
+            changePage(1)
+          }}>
+            Next Page
+        </MDBBtn>
+        </div>
+      ) :''}
       </MDBContainer>
       </div>
      </AdminBaseLayout>

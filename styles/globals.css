@@ -163,3 +163,9 @@ select option {
   .admin-custom-margin {
       margin-top: 6rem;
   }
+
+  /* Admin panel sidenav */
+  .list-group-item.active{
+    border-top: none;
+    border-bottom: 1px solid #b23cfd !important;
+  }

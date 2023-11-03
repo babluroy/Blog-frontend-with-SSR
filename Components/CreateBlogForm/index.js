@@ -162,7 +162,7 @@ export default function CreateBlogForm() {
       <textarea value={blog.shortDesc} name="shortDesc" row="4" className="textarea mb-4" placeholder="Short Description (Max 80 Characters)" maxLength="80" onChange={handleChange}></textarea>
     
       <Editor
-        apiKey="ok6okzhtki279c18py4xfd683qcevj1t04mqu0b4crje61kk"
+        apiKey={process.env.NEXT_PUBLIC_TINYMCE}
         textareaName="Body"
         init={{
           height: 500,

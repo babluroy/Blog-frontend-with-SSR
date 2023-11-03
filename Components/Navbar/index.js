@@ -64,6 +64,15 @@ export default function Navbar() {
     setShowNavNoTogglerSecond(!showNavNoTogglerSecond)
   }
 
+  const isOnAdminPanel = (data) => {
+    if(data == url_constants.admin ||
+       data == url_constants.edit_blog ||
+       data == url_constants.create_category ||
+       data == url_constants.edit_category 
+    ) return true;
+    return false
+  }
+
   return (
     <>
       <MDBNavbar  fixed='top' expand='lg' dark className={styles.navbarCustom}>
@@ -98,7 +107,7 @@ export default function Navbar() {
               {isAdmin ? (
               <MDBNavbarItem>
               <Link href={url_constants.admin}>
-                <MDBNavbarLink className={url == url_constants.allBlogs_without_params ? "active" : ""}>Admin Panel</MDBNavbarLink>
+                <MDBNavbarLink className={ isOnAdminPanel(url) ? "active" : ""}>Admin Panel</MDBNavbarLink>
               </Link>
               </MDBNavbarItem>
               ) : ""}

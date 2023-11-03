@@ -1,7 +1,5 @@
 export const url_constants = {
-
     /* ---USER--- */
-
     signin: "/public/login",
     signup: "/public/signup",
     home: "/app/home",
@@ -11,9 +9,8 @@ export const url_constants = {
     get_blogs_by_categories: "/app/blog-by-categories/",
 
     /* ---ADMIN--- */
-
     admin: "/admin/home",
     edit_blog: "/admin/edit-blog",
     create_category: "/admin/add-categories",
-    ediit_category: "/admin/edit-categories",
+    edit_category: "/admin/edit-categories",
 }

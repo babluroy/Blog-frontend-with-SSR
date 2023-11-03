@@ -37,7 +37,7 @@ export default function Editcategory() {
            <MDBRow>
             {categories.map((data, index) => (
                 <MDBCol md='3' lg='3' sm='12' key={index}>
-                <CategoryCard category={data.name}/>
+                <CategoryCard category={data.name} id={data._id}/>
                 </MDBCol>
             ))}
             </MDBRow>
