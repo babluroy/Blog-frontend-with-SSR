@@ -13,7 +13,7 @@ export default function middleware(req){
         return false;
     }
     
-    if(!isLoggedIn && (url.includes("/app") || url.includes("/admin"))){
+    if(!isLoggedIn && (url.includes("/admin"))){
         next_url.pathname = "/public/login"
         return NextResponse.redirect(next_url)
     }
