@@ -6,7 +6,7 @@
 
 
 
-## Live url: https://blog-frontend-with-ssr.vercel.app/
+## Live url: https://blog-frontend-with-ssr-ten.vercel.app
 
 ## Installation
 
